@@ -1,5 +1,6 @@
 # nodeFire
 AngularFire with token authentication on node backend server
+https://www.firebase.com/docs/web/libraries/angular/
 
 ## Get Started with nodeFire
 1. Run these commands to add the project locally:
