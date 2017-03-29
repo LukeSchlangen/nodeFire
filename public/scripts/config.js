@@ -1,41 +1,9 @@
-/*
-
-########  ######## ########  ##          ###     ######  ########
-##     ## ##       ##     ## ##         ## ##   ##    ## ##
-##     ## ##       ##     ## ##        ##   ##  ##       ##
-########  ######   ########  ##       ##     ## ##       ######
-##   ##   ##       ##        ##       ######### ##       ##
-##    ##  ##       ##        ##       ##     ## ##    ## ##
-##     ## ######## ##        ######## ##     ##  ######  ########
-
-######## ##     ## ####  ######
-   ##    ##     ##  ##  ##    ##
-   ##    ##     ##  ##  ##
-   ##    #########  ##   ######
-   ##    ##     ##  ##        ##
-   ##    ##     ##  ##  ##    ##
-   ##    ##     ## ####  ######
-
-   ######## #### ##       ########
-   ##        ##  ##       ##
-   ##        ##  ##       ##
-   ######    ##  ##       ######
-   ##        ##  ##       ##
-   ##        ##  ##       ##
-   ##       #### ######## ########
-
-*/
-
-// You will need to update these with your own values
-// Do not copy the script tags into here, just the config part
-
-/////////////////////////////////////////////////////////
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyAU9OZTcXLQpS0VheZz7Xy-UpqLGBKlXlY",
-  authDomain: "sigma-test-run.firebaseapp.com",
-  databaseURL: "https://sigma-test-run.firebaseio.com",
-  storageBucket: "sigma-test-run.appspot.com",
-  messagingSenderId: "279228406571"
-};
-firebase.initializeApp(config);
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCpnRgP0ajYuPmFF4ZzPhbadre37CqVWhE",
+    authDomain: "environment-variables-demo.firebaseapp.com",
+    databaseURL: "https://environment-variables-demo.firebaseio.com",
+    storageBucket: "environment-variables-demo.appspot.com",
+    messagingSenderId: "637763564911"
+  };
+  firebase.initializeApp(config);
