@@ -33,7 +33,7 @@ app.controller("SampleCtrl", function($firebaseAuth, $http) {
       });
     } else {
       console.log('Not logged in or not authorized.');
-      self.secretData = "Log in to get some secret data.";
+      self.secretData = [];
     }
 
   });

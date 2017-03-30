@@ -22,8 +22,28 @@
     <h1>Hi! Log in to get some secret data from the server!</h1>
     <button ng-click="sc.logIn()">Log In</button>
     <button ng-click="sc.logOut()">Log Out</button>
-    <div>
-      {{sc.secretData}}
-    </div>
+    <div ng-if="sc.secretData.length === 0">Log in to get some secret data.</div>
+    <table ng-if="sc.secretData.length > 0">
+      <thead>
+        <tr>
+          <th>
+            Secrecy Level
+          </th>
+          <th>
+            Secret Message
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="secret in sc.secretData">
+          <td>
+            {{secret.secrecy_level}}
+          </td>
+          <td>
+            {{secret.secret_text}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
