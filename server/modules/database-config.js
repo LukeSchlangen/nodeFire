@@ -1,1 +1,1 @@
-module.exports = 'postgres://localhost:5432/sigma';
+module.exports = process.env.DATABASE_URL || 'postgres://localhost:5432/sigma';
