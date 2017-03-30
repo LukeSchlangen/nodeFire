@@ -37,13 +37,18 @@
       <tbody>
         <tr ng-repeat="secret in sc.secretData">
           <td>
-            {{secret.secrecy_level}}
+            {{secret.secrecyLevel}}
           </td>
           <td>
-            {{secret.secret_text}}
+            {{secret.secretText}}
           </td>
         </tr>
       </tbody>
     </table>
+    <div>
+      <input ng-model="sc.newUser.email" placeholder="Email">
+      <input ng-model="sc.newUser.clearanceLevel" placeholder="Clearance Level">
+      <button ng-click="sc.createUser()">Create New User</button>
+    </div>
   </body>
 </html>

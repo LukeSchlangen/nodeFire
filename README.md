@@ -1,12 +1,12 @@
-# nodeFire with SQL Authorization
-AngularFire with token authentication on Node backend server. This branch uses the pg node module with a postgres database to show an authorization example.
+# nodeFire with Mongo Authorization
+AngularFire with token authentication on Node backend server. This branch uses the mongoose node module with a mongo database to show an authorization example.
 
 ## Get Started with nodeFire
 1. Run these commands to add the project locally:
   ```shell
   $ git clone https://github.com/LukeSchlangen/nodeFire
   $ cd nodeFire
-  $ git checkout sql-authorization
+  $ git checkout mongo-authorization
   $ npm install
   ```
 
@@ -54,15 +54,18 @@ AngularFire with token authentication on Node backend server. This branch uses t
   5. Toggle Google to `on`
 
 7. Connect the application to your database
-  1. Create a new postico database or select one you already use. In `server/modules/database-config.js`, change the connection string, currently `var connectionString = 'postgres://localhost:5432/sigma';`, to match the location of your database.
-  2. Copy the queries from the `database.sql` file and run them in postico to create the necessary tables for this project. On the insert query, be sure to add your own name and give yourself a clearance_level from 1 to 5. This will determine what data you can see:
+  1. Create a new mongo database or select one you already use. In `server/modules/database-config.js`, change the connection string, currently `var connectionString = 'postgres://localhost:5432/sigma';`, to match the location of your database.
+  2. Copy the queries from the `database.js` file and run them in robomongo or the mongo terminal to create the necessary collections for this project. On the `db.users.insert`, be sure to add your own name and give yourself a clearance_level from 1 to 5. This will determine what data you can see:
 
-    ```sql
-    INSERT INTO users (email, clearance_level)
-    VALUES ('lukeschlangen@gmail.com', 5),
-    ('youremail@gmail.com', 4), --Your Google Email added here
-    ('yourotheremail@gmail.com', 2), --Your Other Google Email added here
-    ('luke@primeacademy.io', 3);
+    ```javascript
+    db.users.insert(
+       [
+        { email: 'lukeschlangen@gmail.com', clearanceLevel: 5 },
+        { email: 'youremail@gmail.com', clearanceLevel: 4 }, // Your Google Email added here
+        { email: 'yourotheremail@gmail.com', clearanceLevel: 2 }, // Your Other Google Email added here
+        { email: 'luke@primeacademy.io', clearanceLevel: 3 }
+       ]
+    );
     ```
   Because you have set up google OAuth, you will need to log in with a google account (an email with `@gmail.com` will work great). If you have a second google account, that will make it easy to see the differences for people with differing clearance levels.
 

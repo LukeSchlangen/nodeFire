@@ -3,7 +3,9 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var decoder = require('./modules/decoder');
+var mongoConnection = require('./modules/mongo-connection');
 var privateData = require('./routes/private-data');
+
 var portDecision = process.env.PORT || 5000;
 
 app.get('/', function(req, res){
@@ -20,6 +22,8 @@ app.use(decoder.token);
 
 // This is the route for your secretData. The request gets here after it has been authenticated.
 app.use("/privateData", privateData);
+
+mongoConnection.connect();
 
 app.listen(portDecision, function(){
   console.log("Listening on port: ", portDecision);
